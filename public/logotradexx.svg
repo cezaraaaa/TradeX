@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="100%" height="100%">
+  <defs>
+    <!-- Umplutura închisă din interiorul hexagonului -->
+    <linearGradient id="innerDarkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B101D" />
+      <stop offset="100%" stop-color="#05070E" />
+    </linearGradient>
+
+    <!-- Gradient Neon Cyan -> Albastru pentru contur -->
+    <linearGradient id="cyanBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#2979FF" />
+    </linearGradient>
+
+    <!-- Gradient Violet -> Roz -->
+    <linearGradient id="purplePinkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D500F9" />
+      <stop offset="100%" stop-color="#AA00FF" />
+    </linearGradient>
+
+    <!-- Gradient Cyan -> Turcoaz -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#00B0FF" />
+    </linearGradient>
+
+    <!-- Efect de Neon / Glow -->
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Hexagonul de fundal (Interior închis la culoare) -->
+  <polygon points="150,30 250,87.5 250,202.5 150,260 50,202.5 50,87.5" 
+           fill="url(#innerDarkGrad)" />
+
+  <!-- Elementele de neon cu efect de strălucire -->
+  <g filter="url(#neonGlow)">
+    <!-- Conturul Hexagonului -->
+    <polygon points="150,30 250,87.5 250,202.5 150,260 50,202.5 50,87.5" 
+             fill="none" 
+             stroke="url(#cyanBlueGrad)" 
+             stroke-width="7" 
+             stroke-linejoin="round" />
+
+    <!-- Lumânarea 1 (Roz/Violet) -->
+    <line x1="110" y1="120" x2="110" y2="180" stroke="#D500F9" stroke-width="3" stroke-linecap="round" />
+    <rect x="105" y="135" width="10" height="35" rx="3" fill="url(#purplePinkGrad)" />
+
+    <!-- Lumânarea 2 (Cyan) -->
+    <line x1="140" y1="90" x2="140" y2="175" stroke="#00E5FF" stroke-width="3" stroke-linecap="round" />
+    <rect x="135" y="105" width="10" height="60" rx="3" fill="url(#cyanGrad)" />
+
+    <!-- Linia de Trend / Săgeată -->
+    <path d="M 100 170 L 165 105 L 175 115" 
+          fill="none" 
+          stroke="url(#cyanGrad)" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+    
+    <!-- Capul Săgeții -->
+    <path d="M 160 115 L 175 115 L 175 130" 
+          fill="none" 
+          stroke="#00E5FF" 
+          stroke-width="8" 
+          stroke-linecap="round" 
+          stroke-linejoin="round" />
+  </g>
+</svg>
