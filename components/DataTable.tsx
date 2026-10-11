@@ -37,8 +37,6 @@ const DataTable = <T,>({
                     ))}
                 </TableRow>
             </TableHeader>
-
-
             <TableBody>
                 {data.map((row, rowIndex) => (
                     <TableRow
