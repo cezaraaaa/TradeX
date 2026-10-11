@@ -13,8 +13,8 @@ interface CandlestickChartProps {
     children?: React.ReactNode;
     mode?: 'historical' | 'live';
     initialPeriod?: Period;
-    liveInterval: '1s' | '1m';
-    setLiveInterval: (interval: '1s' | '1m') => void;
+    liveInterval?: '1s' | '1m';
+    setLiveInterval?: (interval: '1s' | '1m') => void;
 }
 
 interface ConverterProps {
@@ -96,7 +96,6 @@ interface SearchCoin {
     };
 }
 
-// Chart Section Props (used in ChartSection.tsx)
 interface ChartSectionProps {
     coinData: {
         image: { large: string };
