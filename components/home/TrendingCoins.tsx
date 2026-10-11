@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetcher } from '@/coingecko.actions';
+import { fetcher } from '@/lib/coingecko.actions';
 import Link from 'next/link';
 import Image from 'next/image';
 import { cn, formatCurrency } from '@/lib/utils';
